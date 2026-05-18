@@ -1,0 +1,151 @@
+:root {
+    --bg-main: #020617;
+    --bg-card: #0b1220;
+
+    --accent-green: #22c55e;
+    --accent-red: #ef4444;
+
+    --text-primary: #e5e7eb;
+    --text-secondary: #94a3b8;
+
+    --border: #1f2937;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: linear-gradient(180deg, #020617, #020617 60%, #020617);
+    color: var(--text-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Container */
+.container {
+    background: var(--bg-card);
+    padding: 2rem;
+
+    border-radius: 8px; /* sharper = pro look */
+    border: 1px solid var(--border);
+
+    width: 100%;
+    max-width: 950px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+}
+
+/* Title */
+h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    color: var(--accent-green);
+    margin-bottom: 0.3rem;
+}
+
+/* Subtitle */
+p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.8rem;
+}
+
+/* Controls */
+.controls {
+    margin-bottom: 1.8rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+/* Labels */
+.controls label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Price text */
+.controls span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+
+/* Dropdowns */
+#coin-select-1,
+#coin-select-2 {
+    padding: 0.45rem 0.8rem;
+
+    font-size: 0.85rem;
+    font-family: 'Manrope', sans-serif;
+
+    background: #020617;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    color: var(--text-primary);
+    cursor: pointer;
+
+    transition: border 0.2s ease;
+}
+
+#coin-select-1:hover,
+#coin-select-2:hover {
+    border-color: var(--accent-green);
+}
+
+/* Chart container */
+#chart-container {
+    position: relative;
+    height: 400px;
+
+    background: #020617;
+    border-radius: 6px;
+
+    border: 1px solid var(--border);
+    padding: 1rem;
+}
+
+/* Optional: positive / negative colors */
+.positive {
+    color: var(--accent-green);
+}
+
+.negative {
+    color: var(--accent-red);
+}
+
+/* Subtle grid overlay feel */
+#chart-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: linear-gradient(
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px
+    );
+
+    background-size: 40px 40px;
+    pointer-events: none;
+}
